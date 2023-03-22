@@ -14,12 +14,12 @@ def register():
     db = sqlite3.connect('users.db')
     cursor = db.cursor()
     
-    #uztaisa tabuu, ja tada nav
+    #uztaisa tabulu, ja tada nav
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS users (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             username TEXT NOT NULL,
-            password TEXT NOT NULL,
+            password TEXT NOT NULL
         )
     ''')
 
@@ -40,7 +40,7 @@ def register():
     db.close()
 
     #palaiz spēles kodu
-    os.system(f'python main.py {current_player}')
+    os.system('python main.py')
 
 root = tk.Tk()
 root.title("Game Menu")
